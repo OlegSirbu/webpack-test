@@ -1,2 +1,2 @@
-require('./login.es6');
-console.log('index js file');
+require('./login');
+console.log('index js file 222');
