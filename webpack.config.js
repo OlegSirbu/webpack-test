@@ -1,7 +1,15 @@
+var path = require('path');
+
 module.exports = {
-    entry: ['./utils.js', "./index.js"],
+    context: path.resolve('js'),
+    entry: ["./index.js"],
     output: {
+        path: path.resolve('build/js'),
+        publicPath: '/public/assets/js/',
         filename: 'bundle.js'
+    },
+    devServer:{
+        contentBase: 'public'
     },
     module: {
         preLoaders:[
@@ -13,11 +21,24 @@ module.exports = {
         ],
         loaders: [
             {
+                test: /\.scss$/,
+                exlude: /node_modules/,
+                loader: "style-loader!css-loader!sass-loader"
+            },
+            {
+                test: /\.less$/,
+                exlude: /node_modules/,
+                loader: "style-loader!css-loader!less-loader"
+            },
+            {
                 test: /\.es6$/,
                 exlude: /node_modules/,
                 loader: "babel-loader"
             },
-            {test: /\.css$/, loader: "style!css"}
+            {
+                test: /\.css$/,
+                exlude: /node_modules/,
+                loader: "style-loader!css-loader"}
         ]
     },
 
