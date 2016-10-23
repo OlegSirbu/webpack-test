@@ -21,6 +21,11 @@ module.exports = {
         ],
         loaders: [
             {
+                test: /\.json/,
+                exlude: /node_modules/,
+                loader: "json-loader!"+ path.resolve('loaders/strip')
+            },
+            {
                 test: /\.scss$/,
                 exlude: /node_modules/,
                 loader: "style-loader!css-loader!sass-loader"

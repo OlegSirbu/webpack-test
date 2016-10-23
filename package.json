@@ -5,7 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "json-loader": "^0.5.4",
+    "node-libs-browser": "^1.0.0",
+    "strip-json-comments": "^2.0.1"
   },
   "devDependencies": {
     "css-loader": "^0.25.0",
@@ -27,7 +30,7 @@
     "webpack": "^1.13.1"
   },
   "scripts": {
-    "dev":"webpack-dev-server",
+    "dev": "webpack-dev-server",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
