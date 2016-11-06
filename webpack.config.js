@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     context: path.resolve('js'),
@@ -11,6 +12,14 @@ module.exports = {
     devServer:{
         contentBase: 'public'
     },
+
+    plugins:[
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery:'jquery',
+            'windows.jquery': 'jquery'
+        })
+    ],
     module: {
         preLoaders:[
             {
